@@ -1,0 +1,6 @@
+target/
+.mvn/
+.env
+.env.example
+boot.log
+hs_err_pid*.log

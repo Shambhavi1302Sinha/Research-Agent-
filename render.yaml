@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: ai-research-agent
+    runtime: docker
+    repo: https://github.com/Shambhavi1302Sinha/Research-Agent-.git
+    plan: free
+    branch: main
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRATION_MS
+        value: 86400000
+      - key: AI_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_URL
+        value: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
