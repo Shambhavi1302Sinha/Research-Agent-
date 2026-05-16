@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Search | AI Research Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="research">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="dashboard.html" class="brand-mark">AI Research Agent</a>
+            <nav class="nav flex-column gap-2 mt-4">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link active" href="research.html">Research Search</a>
+                <a class="nav-link" href="chatbot.html">Chatbot</a>
+                <a class="nav-link" href="upload.html">Upload Document</a>
+                <a class="nav-link" href="history.html">History</a>
+            </nav>
+        </aside>
+        <main class="content-area">
+            <div class="topbar"><h1>AI Research Search</h1></div>
+            <div class="panel-card">
+                <form id="researchForm" class="row g-3">
+                    <div class="col-md-10">
+                        <input class="form-control form-control-lg" id="researchTopic" list="topicSuggestions" placeholder="Enter a research topic" required>
+                        <datalist id="topicSuggestions">
+                            <option value="Large language models in education"></option>
+                            <option value="Quantum computing applications in cryptography"></option>
+                            <option value="Climate adaptation strategies in coastal cities"></option>
+                            <option value="Blockchain for supply chain transparency"></option>
+                            <option value="AI in medical imaging diagnostics"></option>
+                        </datalist>
+                    </div>
+                    <div class="col-md-1 d-grid">
+                        <button class="btn btn-outline-light" id="voiceSearchBtn" type="button">Voice</button>
+                    </div>
+                    <div class="col-md-1 d-grid">
+                        <button class="btn btn-accent" type="submit">Analyze</button>
+                    </div>
+                </form>
+                <div id="researchLoading" class="loading-line d-none mt-3">Analyzing topic...</div>
+            </div>
+            <div id="researchResult" class="panel-card mt-4 d-none">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                    <h3 id="resultTopic"></h3>
+                    <div class="d-flex gap-2">
+                        <button id="exportSummaryBtn" class="btn btn-outline-light btn-sm">Export TXT</button>
+                        <button id="exportPdfBtn" class="btn btn-outline-light btn-sm">Export PDF</button>
+                    </div>
+                </div>
+                <p id="resultSummary" class="mt-3"></p>
+                <div class="row g-4">
+                    <div class="col-md-4"><div><h4>Key Insights</h4><ul id="resultInsights" class="plain-list"></ul></div></div>
+                    <div class="col-md-4"><div><h4>Important Points</h4><ul id="resultPoints" class="plain-list"></ul></div></div>
+                    <div class="col-md-4"><div><h4>Related Topics</h4><ul id="resultRelated" class="plain-list"></ul></div></div>
+                </div>
+            </div>
+            <div class="panel-card mt-4">
+                <h3>AI Recommendations</h3>
+                <div id="recommendationList" class="plain-list"></div>
+            </div>
+            <div class="panel-card mt-4">
+                <h3>Citation Generator</h3>
+                <form id="citationForm" class="row g-3 mt-1">
+                    <div class="col-md-6"><input id="citationTitle" class="form-control" placeholder="Source title" required></div>
+                    <div class="col-md-6"><input id="citationAuthors" class="form-control" placeholder="Authors" required></div>
+                    <div class="col-md-4"><input id="citationYear" class="form-control" placeholder="Year" required></div>
+                    <div class="col-md-4"><input id="citationPublisher" class="form-control" placeholder="Publisher" required></div>
+                    <div class="col-md-4"><select id="citationStyle" class="form-select"><option>APA</option><option>MLA</option><option>Harvard</option></select></div>
+                    <div class="col-md-9"><input id="citationUrl" class="form-control" placeholder="URL" required></div>
+                    <div class="col-md-3 d-grid"><button class="btn btn-accent" type="submit">Generate</button></div>
+                </form>
+                <div id="citationResult" class="output-box mt-3 d-none"></div>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

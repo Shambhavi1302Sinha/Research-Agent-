@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document | AI Research Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="upload">
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a href="dashboard.html" class="brand-mark">AI Research Agent</a>
+            <nav class="nav flex-column gap-2 mt-4">
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="research.html">Research Search</a>
+                <a class="nav-link" href="chatbot.html">Chatbot</a>
+                <a class="nav-link active" href="upload.html">Upload Document</a>
+                <a class="nav-link" href="history.html">History</a>
+            </nav>
+        </aside>
+        <main class="content-area">
+            <div class="topbar"><h1>Upload PDF</h1></div>
+            <div class="panel-card">
+                <form id="uploadForm">
+                    <input class="form-control" type="file" id="pdfFile" accept="application/pdf" required>
+                    <button class="btn btn-accent mt-3" type="submit">Upload and Summarize</button>
+                </form>
+                <div id="uploadResult" class="mt-4 d-none">
+                    <h3 id="uploadFileName"></h3>
+                    <p id="uploadSummary"></p>
+                    <div class="output-box"><strong>Preview:</strong><span id="uploadPreview"></span></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

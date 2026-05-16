@@ -1,0 +1,6 @@
+backend/target/
+*.log
+hs_err_pid*.log
+.DS_Store
+.env
+.env.example
